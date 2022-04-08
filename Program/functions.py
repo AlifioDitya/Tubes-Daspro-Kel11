@@ -22,7 +22,7 @@ def countColumn(file):
     return column
 
 def manualSplit(word, delimiter):
-# Fungsi mengubah string menjadi elemen array yang dipisahkan oleh suatu character (seperti fungsi split() di python 3).
+# Fungsi mengubah string menjadi elemen array yang dipisahkan oleh suatu character, berfungsi seperti fungsi split() di python 3.
     sumElement = 0
     for i in word:
         if i == delimiter:
@@ -46,6 +46,13 @@ def replaceChar(word ,old, new):
         if character != old:
             temp += character
     return temp       
+
+def length(arr):
+# fungsi menghasilkan jumlah elemen pada arr, berfungsi seperti len() pada python 3
+    total = 0
+    for i in arr:
+        total += 1
+    return total
 
 def convertData(file):
 # Fungsi ini mengonversi data pada file csv menjadi matrix
