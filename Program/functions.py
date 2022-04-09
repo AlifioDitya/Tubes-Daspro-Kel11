@@ -58,6 +58,17 @@ def manualSplit(word, delimiter):
         j += 1
     return li
 
+def isWhitespace(word):
+# Fungsi mengembalikan True apabila suatu string kosong atau spasi.
+# Sering digunakan ketika mengecek apabila input string kosong
+    empty = True
+    if length(word) == 0:
+        return empty
+    for i in word:
+        if i != " ":
+            empty = False
+    return empty
+
 def convertData(file):
 # Fungsi ini mengonversi data pada file csv menjadi matrix
     f = open(file, "r")
