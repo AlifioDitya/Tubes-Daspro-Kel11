@@ -106,7 +106,7 @@ def retrieveIdx(dataMatrix, element, column):
 
 def inputID(dataMtx):
 # Prosedur melakukan validasi terhadap masukan ID.
-    id = input("Masukkan ID game: ")
+    id = input("Masukkan ID game: ").upper()
     while not isInData(dataMtx, id, 0) or isWhitespace(id):
         if isWhitespace(id):
             print("ID game tidak boleh kosong.")
