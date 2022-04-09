@@ -114,3 +114,66 @@ def inputID(dataMtx):
             print("Tidak ada game dengan ID tersebut!")
         id = input("Masukkan ID game: ")
     return id
+
+def findLongestOnColumn(dataMtx, column):
+# Fungsi mencari jumlah karakter string terpanjang dalam suatu kolom di matriks
+# Digunakan dalam proses menggambar tabel
+    maxLen = 0
+    for i in range(1, length(dataMtx)):
+        if length(dataMtx[i][column]) > maxLen:
+            maxLen = length(dataMtx[i][column])
+    return maxLen
+
+def drawBorder(dataMtx):
+# Prosedur menggambar border tabel matriks data
+# I.S dataMtx terdefinisi, F.S tergambar border tabel dataMtx
+    sumLine = 0
+    column = length(dataMtx[0])
+    for x in range(column):
+        sumLine += findLongestOnColumn(dataMtx, x)
+    sumLine += 2*column + column
+    if length(dataMtx) >= 10:
+        sumLine += 5
+    else:
+        sumLine += 4
+    print("+", end="")
+    print("-"*sumLine, end="")
+    print("+")
+
+def drawTable(dataMtx):
+# Prosedur menggambar matriks data dalam bentuk tabel
+# I.S dataMtx terdefinisi, F.S tabel dataMtx tergambar
+    drawBorder(dataMtx)
+    for i in range(1, length(dataMtx)):
+        if length(dataMtx) >= 10:
+            if i >= 10:
+                print("| " + str(i) + ".", end=" |")
+            else:
+                print("| " + str(i) + ".", end="  |")
+        else:
+            print("| " + str(i) + ".", end=" |")
+        for j in range(length(dataMtx[i])):
+            maxLenColumn = findLongestOnColumn(dataMtx, j)
+            element = " " + str(dataMtx[i][j])
+            for k in range(maxLenColumn-length(dataMtx[i][j])):
+                element += " "
+            element += " |"
+            if j == (length(dataMtx[i])-1):
+                print(element)
+            else:
+                print(element, end="")
+    drawBorder(dataMtx)
+
+def sortMtxCol(dataMtx, column, mode):
+# Fungsi menghasilkan matriks yang terurut kolomnya sesuai mode
+# Mode 0 untuk ascending, mode selain 0 untuk descending
+    sorted = [[item for item in line] for line in dataMtx]
+    for i in range(1, length(sorted)):
+        for j in range(1, length(sorted)):
+            if mode == 0:
+                if int(sorted[i][column]) < int(sorted[j][column]):
+                    sorted[i], sorted[j] = sorted[j], sorted[i]
+            else:
+                if int(sorted[i][column]) > int(sorted[j][column]):
+                    sorted[i], sorted[j] = sorted[j], sorted[i]
+    return sorted
