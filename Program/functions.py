@@ -96,10 +96,10 @@ def isInData(dataMatrix, element):
         found = True
     return found
 
-def retrieveIdx(dataMatrix, ID):
-# Fungsi menghasilkan index matriks berdasarkan ID game
-# Prekondisi : ID harus ada di matriks toko game
+def retrieveIdx(dataMatrix, element):
+# Fungsi menghasilkan index matriks pertama kali elemen masukan ditemukan
+# Prekondisi : elemen harus ada di matriks toko game
     i = 0
-    while dataMatrix[i][0] != ID and i < (length(dataMatrix)-1):
+    while element not in dataMatrix[i] and i < (length(dataMatrix)-1):
         i += 1
     return i
