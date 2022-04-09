@@ -110,7 +110,7 @@ def inputID(dataMtx):
     while not isInData(dataMtx, id, 0) or isWhitespace(id):
         if isWhitespace(id):
             print("ID game tidak boleh kosong.")
-        elif not isInData(dataMtx, id):
-            print("ID game tidak ada.")
+        elif not isInData(dataMtx, id, 0):
+            print("Tidak ada game dengan ID tersebut!")
         id = input("Masukkan ID game: ")
     return id

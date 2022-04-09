@@ -1,7 +1,8 @@
 import functions as func
 
 def changeAttr(dataMtx):
-# Fungsi mengubah atribut game pada toko game berdasarkan ID
+# Prosedur mengubah atribut game pada toko game berdasarkan ID
+# I.S dataMtx terdefinisi, F.S elemen dataMtx termodifikasi
     id = input("Masukkan ID game: ")
     while not func.isInData(dataMtx, id) or func.isWhitespace(id):
         if func.isWhitespace(id):
@@ -18,4 +19,4 @@ def changeAttr(dataMtx):
     for i in range(1,5):
         if not func.isWhitespace(arr[i-1]):
             dataMtx[idx][i] = arr[i-1]
-    return dataMtx
+    return

@@ -1,7 +1,8 @@
 import functions as func
 
 def addGame(dataMtx):
-# Fungsi menambahkan game pada matriks toko game
+# Prosedur menambahkan game pada matriks toko game
+# I.S dataMtx terdefinisi, F.S ditambahkan elemen ke dataMtx
     name = input("Masukkan nama game: ")
     ctgry = input("Masukkan kategori: ")
     year = input("Masukkan tahun rilis: ")
@@ -15,6 +16,6 @@ def addGame(dataMtx):
         price = input("Masukkan harga: ")
         stock = input("Masukkan stok awal: ")
     id = func.getGameID(dataMtx)
-    updated = dataMtx + [[id, name, ctgry, year, price, stock]]
+    dataMtx += [[id, name, ctgry, year, price, stock]]
     print("Selamat! Berhasil menambahkan game " + name + ".")
-    return updated
+    return
