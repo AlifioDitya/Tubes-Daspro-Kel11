@@ -112,7 +112,7 @@ def inputID(dataMtx):
             print("ID game tidak boleh kosong.")
         elif not isInData(dataMtx, id, 0):
             print("Tidak ada game dengan ID tersebut!")
-        id = input("Masukkan ID game: ")
+        id = input("Masukkan ID game: ").upper()
     return id
 
 def findLongestOnColumn(dataMtx, column):
