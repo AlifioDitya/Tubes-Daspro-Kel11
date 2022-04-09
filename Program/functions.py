@@ -89,6 +89,13 @@ def getGameID(dataMatrix):
     id += str("{0:03}".format(element))
     return id
 
+def isInData(dataMatrix, element):
+# Fungsi menghasilkan true apabila element terdapat di dalam matriks data
+    found = False
+    if element in (item for line in dataMatrix for item in line):
+        found = True
+    return found
+
 def retrieveIdx(dataMatrix, ID):
 # Fungsi menghasilkan index matriks berdasarkan ID game
 # Prekondisi : ID harus ada di matriks toko game
