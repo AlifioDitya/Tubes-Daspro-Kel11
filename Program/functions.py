@@ -75,7 +75,7 @@ def convertData(file):
     raw = f.readlines()
     f.close()
     arr = [replaceChar(line, "\n", "") for line in raw]
-    matrix = [[] for i in range(countRow(file))]
+    matrix = [[] for i in range(length(arr))]
     i = 0
     for line in arr:
         matrix[i] = manualSplit(line, ";")
@@ -88,3 +88,11 @@ def getGameID(dataMatrix):
     element = length(dataMatrix)
     id += str("{0:03}".format(element))
     return id
+
+def retrieveIdx(dataMatrix, ID):
+# Fungsi menghasilkan index matriks berdasarkan ID game
+# Prekondisi : ID harus ada di matriks toko game
+    i = 0
+    while dataMatrix[i][0] != ID and i < (length(dataMatrix)-1):
+        i += 1
+    return i

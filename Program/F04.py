@@ -10,9 +10,9 @@ def addGame(dataMtx):
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
         name = input("Masukkan nama game: ")
         ctgry = input("Masukkan kategori: ")
-        year = int(input("Masukkan tahun rilis: "))
-        price = int(input("Masukkan harga: "))
-        stock = int(input("Masukkan stok awal: "))
+        year = input("Masukkan tahun rilis: ")
+        price = input("Masukkan harga: ")
+        stock = input("Masukkan stok awal: ")
     id = func.getGameID(dataMtx)
     updated = dataMtx + [[id, name, ctgry, year, price, stock]]
     return updated
