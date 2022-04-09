@@ -21,24 +21,6 @@ def countColumn(file):
     f.close()
     return column
 
-def manualSplit(word, delimiter):
-# Fungsi mengubah string menjadi elemen array yang dipisahkan oleh suatu character, berfungsi seperti fungsi split() di python 3.
-    sumElement = 0
-    for i in word:
-        if i == delimiter:
-            sumElement += 1
-    li = [" " for i in range(sumElement)]
-    temp = ""
-    idx = 0
-    for character in word:
-        if character != delimiter:
-            temp += character
-        else:
-            li[idx] = temp
-            temp = ""
-            idx += 1
-    return li
-
 def replaceChar(word ,old, new):
 # fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
     temp = ""
@@ -54,6 +36,28 @@ def length(arr):
         total += 1
     return total
 
+def manualSplit(word, delimiter):
+# Fungsi mengubah string menjadi elemen array yang dipisahkan oleh suatu character, berfungsi seperti fungsi split() di python 3.
+    sumElement = 1
+    for i in word:
+        if i == delimiter:
+            sumElement += 1
+    li = [" " for i in range(sumElement)]
+    temp = ""
+    idx = 0
+    j = 0
+    for character in word:
+        if character != delimiter:
+            temp += character
+            if j == length(word)-1:
+                li[idx] = temp
+        else:
+            li[idx] = temp
+            temp = ""
+            idx += 1
+        j += 1
+    return li
+
 def convertData(file):
 # Fungsi ini mengonversi data pada file csv menjadi matrix
     f = open(file, "r")
@@ -66,3 +70,10 @@ def convertData(file):
         matrix[i] = manualSplit(line, ";")
         i += 1
     return matrix  
+
+def getGameID(dataMatrix):
+# Fungsi menghasilkan ID game terbaru, yakni pada urutan paling terakhir dalam toko game
+    id = "GAME"
+    element = length(dataMatrix)
+    id += str("{0:03}".format(element))
+    return id

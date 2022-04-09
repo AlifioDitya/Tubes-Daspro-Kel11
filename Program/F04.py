@@ -13,5 +13,6 @@ def addGame(dataMtx):
         year = input("Masukkan tahun rilis: ")
         price = input("Masukkan harga: ")
         stock = input("Masukkan stok awal: ")
-    updated = dataMtx + [[name, ctgry, year, price, stock]]
+    id = func.getGameID(dataMtx)
+    updated = dataMtx + [[id, name, ctgry, year, price, stock]]
     return updated
