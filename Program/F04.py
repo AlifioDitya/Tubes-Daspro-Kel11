@@ -16,4 +16,5 @@ def addGame(dataMtx):
         stock = input("Masukkan stok awal: ")
     id = func.getGameID(dataMtx)
     updated = dataMtx + [[id, name, ctgry, year, price, stock]]
+    print("Selamat! Berhasil menambahkan game " + name + ".")
     return updated
