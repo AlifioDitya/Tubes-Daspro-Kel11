@@ -89,17 +89,28 @@ def getGameID(dataMatrix):
     id += str("{0:03}".format(element))
     return id
 
-def isInData(dataMatrix, element):
-# Fungsi menghasilkan true apabila element terdapat di dalam matriks data
+def isInData(dataMatrix, element, column):
+# Fungsi menghasilkan true apabila element terdapat di dalam kolom matriks tertentu
     found = False
-    if element in (item for line in dataMatrix for item in line):
+    if element in (line[column] for line in dataMatrix):
         found = True
     return found
 
-def retrieveIdx(dataMatrix, element):
-# Fungsi menghasilkan index matriks pertama kali elemen masukan ditemukan
+def retrieveIdx(dataMatrix, element, column):
+# Fungsi menghasilkan index matriks pertama kali elemen pada suatu kolom ditemukan
 # Prekondisi : elemen harus ada di matriks toko game
     i = 0
-    while element not in dataMatrix[i] and i < (length(dataMatrix)-1):
+    while element != dataMatrix[i][column] and i < (length(dataMatrix)-1):
         i += 1
     return i
+
+def inputID(dataMtx):
+# Prosedur melakukan validasi terhadap masukan ID.
+    id = input("Masukkan ID game: ")
+    while not isInData(dataMtx, id, 0) or isWhitespace(id):
+        if isWhitespace(id):
+            print("ID game tidak boleh kosong.")
+        elif not isInData(dataMtx, id):
+            print("ID game tidak ada.")
+        id = input("Masukkan ID game: ")
+    return id
