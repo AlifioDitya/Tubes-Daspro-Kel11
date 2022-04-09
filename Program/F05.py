@@ -19,4 +19,3 @@ def changeAttr(dataMtx):
         if not func.isWhitespace(arr[i-1]):
             dataMtx[idx][i] = arr[i-1]
     return dataMtx
-

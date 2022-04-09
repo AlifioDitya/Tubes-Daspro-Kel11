@@ -1,6 +1,7 @@
 import functions as func
 
 def addGame(dataMtx):
+# Fungsi menambahkan game pada matriks toko game
     name = input("Masukkan nama game: ")
     ctgry = input("Masukkan kategori: ")
     year = input("Masukkan tahun rilis: ")
