@@ -4,10 +4,10 @@ def changeAttr(dataMtx):
 # Fungsi mengubah atribut game pada toko game berdasarkan ID
     id = input("Masukkan ID game: ")
     while not func.isInData(dataMtx, id) or func.isWhitespace(id):
-        if not func.isInData(dataMtx, id):
-            print("ID game tidak ada.")
-        elif func.isWhitespace(id):
+        if func.isWhitespace(id):
             print("ID game tidak boleh kosong.")
+        elif not func.isInData(dataMtx, id):
+            print("ID game tidak ada.")
         id = input("Masukkan ID game: ")
     name = input("Masukkan nama game: ")
     ctgry = input("Masukkan kategori: ")
