@@ -69,6 +69,13 @@ def isWhitespace(word):
             empty = False
     return empty
 
+def konso(arr, element):
+# Prosedur menambahkan elemen baru ke depan list
+    arr = [element] + arr
+
+def konsdot(arr, element):
+    arr += [element]
+
 def convertData(file):
 # Fungsi ini mengonversi data pada file csv menjadi matrix
     f = open(file, "r")
@@ -92,8 +99,10 @@ def getGameID(dataMatrix):
 def isInData(dataMatrix, element, column):
 # Fungsi menghasilkan true apabila element terdapat di dalam kolom matriks tertentu
     found = False
-    if element in (line[column] for line in dataMatrix):
-        found = True
+    for line in dataMatrix:
+        if line[column] == element:
+            found = True
+            break
     return found
 
 def retrieveIdx(dataMatrix, element, column):
