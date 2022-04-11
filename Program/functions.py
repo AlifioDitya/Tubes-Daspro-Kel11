@@ -1,4 +1,5 @@
 # File ini memuat fungsi/prosedur pendukung program
+# Last updated 11 April 2022
 
 def countRow(file):
 # Fungsi ini menghitung jumlah baris pada file csv
