@@ -1,34 +1,15 @@
 # File ini memuat fungsi/prosedur pendukung program
 # Last updated 11 April 2022
 
-def countRow(file):
-# Fungsi ini menghitung jumlah baris pada file csv
-    f = open(file, "r")
-    row = 0
-    for i in f:
-        row += 1
-    f.close()
-    return row
-
-def countColumn(file):
-# Fungsi ini menghitung jumlah kolom pada file csv
-# Prekondisi : file harus terisi setidaknya 1 elemen (termasuk header)
-    f = open(file, "r")
-    column = 1
-    raw = [line for line in f]
-    for i in raw[0]:
-        if i == ";":
-            column += 1
-    f.close()
-    return column
-
 def replaceChar(word ,old, new):
 # fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
     temp = ""
     for character in word:
         if character != old:
             temp += character
-    return temp       
+        else:
+            temp += new
+    return temp     
 
 def length(arr):
 # fungsi menghasilkan jumlah elemen pada arr, berfungsi seperti len() pada python 3
@@ -75,6 +56,7 @@ def konso(arr, element):
     arr = [element] + arr
 
 def konsdot(arr, element):
+# Prosedur menambahkan elemen baru ke belakang list
     arr += [element]
 
 def convertData(file):
@@ -89,13 +71,6 @@ def convertData(file):
         matrix[i] = manualSplit(line, ";")
         i += 1
     return matrix  
-
-def getGameID(dataMatrix):
-# Fungsi menghasilkan ID game terbaru, yakni pada urutan paling terakhir dalam toko game
-    id = "GAME"
-    element = length(dataMatrix)
-    id += str("{0:03}".format(element))
-    return id
 
 def isInData(dataMatrix, element, column):
 # Fungsi menghasilkan true apabila element terdapat di dalam kolom matriks tertentu
@@ -129,7 +104,7 @@ def findLongestOnColumn(dataMtx, column):
 # Fungsi mencari jumlah karakter string terpanjang dalam suatu kolom di matriks
 # Digunakan dalam proses menggambar tabel
     maxLen = 0
-    for i in range(1, length(dataMtx)):
+    for i in range(length(dataMtx)):
         if length(dataMtx[i][column]) > maxLen:
             maxLen = length(dataMtx[i][column])
     return maxLen
@@ -153,21 +128,32 @@ def drawBorder(dataMtx):
 def drawTable(dataMtx):
 # Prosedur menggambar matriks data dalam bentuk tabel
 # I.S dataMtx terdefinisi, F.S tabel dataMtx tergambar
+# Prekondisi : Tabel harus memuat header
     drawBorder(dataMtx)
+    print("| No", end="")
+    for i in range(length(dataMtx[0])):
+        space = findLongestOnColumn(dataMtx, i) + 2 - length(dataMtx[0][i])
+        if (space % 2) == 0:
+            print(" | " + " "*(space//2-1) + replaceChar(str(dataMtx[0][i]).upper(), "_", " ") + " "*(space//2-1), end="")
+        else:
+            print(" | " + " "*(space//2-1) + replaceChar(str(dataMtx[0][i]).upper(), "_", " ") + " "*(space//2), end="")
+    print(" |")
+    drawBorder(dataMtx)
+
     for i in range(1, length(dataMtx)):
-        if length(dataMtx) >= 10:
-            if i >= 10:
+        if length(dataMtx) >= 100:
+            if i >= 100:
                 print("| " + str(i) + ".", end=" |")
-            else:
+            elif i >= 10 and i < 100:
                 print("| " + str(i) + ".", end="  |")
+            else:
+                print("| " + str(i) + ".", end="   |")
         else:
             print("| " + str(i) + ".", end=" |")
+
         for j in range(length(dataMtx[i])):
             maxLenColumn = findLongestOnColumn(dataMtx, j)
-            element = " " + str(dataMtx[i][j])
-            for k in range(maxLenColumn-length(dataMtx[i][j])):
-                element += " "
-            element += " |"
+            element = " " + str(dataMtx[i][j]) + " "*(maxLenColumn-length(dataMtx[i][j])) + " |"
             if j == (length(dataMtx[i])-1):
                 print(element)
             else:
