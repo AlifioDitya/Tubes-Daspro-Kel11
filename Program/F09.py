@@ -14,7 +14,7 @@ def list_game(mtxGame, mtxKepemilikan, userid):
             j += 1
 
     if func.length(gameID) == 0:
-        print("Maaf anda belum punya game.")
+        print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.")
     else:
         arrGame = [["id","nama","kategori","tahun_rilis","harga"]] + [" " for game in gameID]
         i = 1
