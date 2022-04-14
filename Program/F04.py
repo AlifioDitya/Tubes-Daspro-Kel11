@@ -10,13 +10,21 @@ def getGameID(dataMatrix):
 def addGame(dataMtx):
 # Prosedur menambahkan game pada matriks toko game
 # I.S dataMtx terdefinisi, F.S ditambahkan elemen ke dataMtx
+    print()
     name = input("Masukkan nama game: ")
+    while func.isInData(dataMtx, name, 1):
+        print()
+        print("Game sudah ada di toko!")
+        print()
+        name = input("Masukkan nama game: ")
     ctgry = input("Masukkan kategori: ")
     year = input("Masukkan tahun rilis: ")
     price = input("Masukkan harga: ")
     stock = input("Masukkan stok awal: ")
     while (func.isWhitespace(name) or func.isWhitespace(ctgry) or func.isWhitespace(year) or func.isWhitespace(price) or func.isWhitespace(stock)):
+        print()
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
+        print()
         name = input("Masukkan nama game: ")
         ctgry = input("Masukkan kategori: ")
         year = input("Masukkan tahun rilis: ")
@@ -24,5 +32,6 @@ def addGame(dataMtx):
         stock = input("Masukkan stok awal: ")
     id = getGameID(dataMtx)
     dataMtx += [[id, name, ctgry, year, price, stock]]
+    print()
     print("Selamat! Berhasil menambahkan game " + name + ".")
     return

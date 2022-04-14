@@ -28,32 +28,36 @@ def register(userMtx):
     # valid : boolean
     # i : integer
 # ALGORITMA
+    print()
     name = input("Masukkan nama: ")
     username = input("Masukkan username: ")
     # Validasi username per character 
     validasiUsername = ["-","_","0","1","2","3","4","5","6","7","8","9"]
     # Asumsikan username sudah valid
-    valid = True 
+    valid = True
+    errMessage = ""
     # Looping kevalidan character username 
     for i in range(func.length(username)):
-        if(username[i] in (validasiUsername) or (ord(username[i]) >= 97 and ord(username[i]) <= 122) or (ord(username[i]) >= 65 and ord(username[i]) <= 90)): 
-            pass
-        else:
+        if not (username[i] in (validasiUsername) or (ord(username[i]) >= 97 and ord(username[i]) <= 122) or (ord(username[i]) >= 65 and ord(username[i]) <= 90)): 
             valid = False
+            errMessage = "Username tidak valid."
             break
+    
     # Cek apabila username sudah ada di data user
-    for line in userMtx:
-        if username in line:
+    for i in range(func.length(userMtx)):
+        if username == userMtx[i][1]:
             valid = False
-        break
+            errMessage = "Username " + str(username) + " sudah terpakai, silakan menggunakan username lain."
+            break
 
-    if (valid):
-        password = input("Masukkan password: ")
+    password = input("Masukkan password: ")
+    print()
+    if valid:
         id = UserID(userMtx)
         # menyimpan data user dalam matrix
-        dataUsers = [id,username,name,password,"user",str(0)]
+        dataUsers = [id,username,name,password,"user","0"]
         userMtx += [dataUsers]
         print("Username " + username + " telah berhasil register ke dalam Binomo.")
     else:
-        print("Username tidak valid")
+        print(errMessage)
     return

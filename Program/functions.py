@@ -51,14 +51,6 @@ def isWhitespace(word):
             empty = False
     return empty
 
-def konso(arr, element):
-# Prosedur menambahkan elemen baru ke depan list
-    arr = [element] + arr
-
-def konsdot(arr, element):
-# Prosedur menambahkan elemen baru ke belakang list
-    arr += [element]
-
 def convertData(file):
 # Fungsi ini mengonversi data pada file csv menjadi matrix
     f = open(file, "r")
@@ -94,9 +86,12 @@ def inputID(dataMtx):
     id = input("Masukkan ID game: ").upper()
     while not isInData(dataMtx, id, 0) or isWhitespace(id):
         if isWhitespace(id):
+            print()
             print("ID game tidak boleh kosong.")
         elif not isInData(dataMtx, id, 0):
+            print()
             print("Tidak ada game dengan ID tersebut!")
+        print()
         id = input("Masukkan ID game: ").upper()
     return id
 

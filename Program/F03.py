@@ -6,14 +6,16 @@ def login(userMtx):
 #   username, password : string
 #   name, userID, userRole : string
 # ALGORITMA
+    print()
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
-    # looping ketika log in gagal, yakni ketika username tidak ada di data atau password salah
+    # looping ketika log in gagal 
     while not func.isInData(userMtx, username, 1) or (func.isInData(userMtx, username, 1) and password != userMtx[func.retrieveIdx(userMtx, username, 1)][3]):
         print("Password atau username salah atau tidak ditemukan.")
         username = input("Masukkan username: ")
         password = input("Masukkan password: ")
     name = userMtx[func.retrieveIdx(userMtx, username, 1)][2]
+    print()
     print("Halo " + name + "! Selamat datang di Binomo.")
     userID = userMtx[func.retrieveIdx(userMtx, username, 1)][0]
     userRole = userMtx[func.retrieveIdx(userMtx, username, 1)][4]

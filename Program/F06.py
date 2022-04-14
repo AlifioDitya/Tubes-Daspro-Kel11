@@ -3,7 +3,9 @@ import functions as func
 def changeStock(dataMtx):
 # Prosedur mengubah stok game pada matriks toko game
 # I.S dataMtx terdefinisi, F.S elemen 'stok' pada salah satu baris dataMtx ditambahkan/dikurangi 
+    print()
     id = func.inputID(dataMtx)
+    print()
     idx = func.retrieveIdx(dataMtx, id, 0)
     initial = int(dataMtx[idx][5])
     addWith = int(input("Masukkan jumlah: "))
@@ -11,6 +13,7 @@ def changeStock(dataMtx):
     if addWith > 0: action = "ditambahkan." 
     else: action = "dikurangi."
     final = initial + addWith
+    print()
     if final < 0:
         print("Stok game", dataMtx[idx][1], "gagal dikurangi karena stok kurang. Stok sekarang:", dataMtx[idx][5])
     else:
