@@ -8,6 +8,8 @@ parser.add_argument('folder', help='nama folder tempat penyimpanan data')
 args = parser.parse_args()
 
 def load():
+# Prosedur melakukan loading data dari tempat penyimpanan folder yang telah dispesifikasikan
+# I.S Data belum terdefinisi, F.S Data termuat ke dalam sistem
     path = os.path.join(ROOT_DIR, args.folder)
     if func.isWhitespace(args.folder):
         print("Tidak ada nama folder yang diberikan!")
