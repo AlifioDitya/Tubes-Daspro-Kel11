@@ -7,6 +7,7 @@ def drawSortedMtx(dataMtx):
     while not func.isWhitespace(sortBy) and sortBy.lower() != "tahun-" and sortBy.lower() != "tahun+" and sortBy.lower() != "harga-" and sortBy.lower() != "harga+":
         print("Skema sorting tidak valid!")
         sortBy = input("Skema sorting: ")
+    print("Daftar game: ")
     if func.isWhitespace(sortBy):
         func.drawTable(dataMtx)
     elif sortBy.lower() == "tahun+":

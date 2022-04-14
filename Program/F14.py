@@ -40,3 +40,4 @@ def help(userType):
         print("6. search_my_game - Untuk mencari salah satu game yang dimiliki User")
         print("7. search_game_at_store - Untuk mencari sebuah game yang dijual pada toko")
         print("8. riwayat - Untuk melihat riwayat pembelian User")
+    print()

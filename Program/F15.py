@@ -18,7 +18,8 @@ def load():
         print("Folder " + str(args.folder) + " tidak ditemukan.")
         return False
     else:
-        print("Selamat datang di antarmuka Binomo!")
+        print("Selamat datang di antarmuka Binomo! ヽ(o^ ^o)ﾉ")
+        print("Mohon login terlebih dahulu untuk mengakses fitur penuh.")
         user = func.convertData(os.path.join(path, "user.csv"))
         game = func.convertData(os.path.join(path, "game.csv"))
         riwayat = func.convertData(os.path.join(path, "riwayat.csv"))

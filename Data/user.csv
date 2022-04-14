@@ -1,1 +1,5 @@
 id;username;nama;password;role;saldo
+USER001;alifioditya;Fio;Fio070504;admin;250000
+USER002;victoriangelique;Angie;va1234;user;1250000
+USER003;yobeldc;Yobel;ybdc2345;user;100000
+USER004;ramarezky;Rama;rm9090;user;150000

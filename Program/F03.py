@@ -6,8 +6,6 @@ def login(userMtx):
 #   username, password : string
 #   name, userID, userRole : string
 # ALGORITMA
-    print("Selamat datang di Binomo! ヽ(o^ ^o)ﾉ")
-    print("Mohon login terlebih dahulu!")
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
     # looping ketika log in gagal, yakni ketika username tidak ada di data atau password salah

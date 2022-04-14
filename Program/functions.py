@@ -130,7 +130,10 @@ def drawTable(dataMtx):
 # I.S dataMtx terdefinisi, F.S tabel dataMtx tergambar
 # Prekondisi : Tabel harus memuat header
     drawBorder(dataMtx)
-    print("| No", end="")
+    if length(dataMtx) <= 10:
+        print("| No", end="")
+    else:
+        print("| No", end=" ")
     for i in range(length(dataMtx[0])):
         space = findLongestOnColumn(dataMtx, i) + 2 - length(dataMtx[0][i])
         if (space % 2) == 0:
@@ -148,6 +151,11 @@ def drawTable(dataMtx):
                 print("| " + str(i) + ".", end="  |")
             else:
                 print("| " + str(i) + ".", end="   |")
+        elif length(dataMtx) >= 10:
+            if i >= 10 and i < 100:
+                print("| " + str(i) + ".", end=" |")
+            else:
+                print("| " + str(i) + ".", end="  |")
         else:
             print("| " + str(i) + ".", end=" |")
 
