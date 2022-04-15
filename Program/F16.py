@@ -45,5 +45,6 @@ def save():
         filedir = os.path.join(path, "kepemilikan.csv")
         writeCSV(var.kepemilikan, filedir)
     print()
+    print("Saving...")
     print("Data telah tersimpan pada folder " + folder)
     return

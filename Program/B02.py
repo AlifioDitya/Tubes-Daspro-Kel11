@@ -11,6 +11,7 @@ def lcg():
 
 def mcs():
 # Prosedur magic conch shell memberikan jawaban secara pseudorandom
+    print()
     a = input("Apa pertanyaanmu? ")
     n = lcg()
     if n == 0:
