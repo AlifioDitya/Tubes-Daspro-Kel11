@@ -1,5 +1,4 @@
 # File ini memuat fungsi/prosedur pendukung program
-# Last updated 11 April 2022
 
 def replaceChar(word ,old, new):
 # fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
