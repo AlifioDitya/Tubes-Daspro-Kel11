@@ -1,4 +1,7 @@
+import os
 import functions as func
+import variables as var
+from config import ROOT_DIR
 
 def mtxToCSV(mtx):
 # Prosedur mengubah bentuk data dari matriks ke string terpisah oleh titik koma
@@ -9,10 +12,38 @@ def mtxToCSV(mtx):
                 temp += str(element) + ";"
             else: temp += str(element) + "\n"
     return temp
-
-def save(matrix, file):
-# Prosedur melakukan penulisan data berbentuk matriks ke dalam file csv tujuan
+        
+def writeCSV(matrix, file):
+# Prosedur melakukan penulisan data berbentuk matriks ke dalam file csv
     f = open(file, "w")
     f.write(mtxToCSV(matrix))
     f.close()
+    return
+
+def save():
+# Prosedur melakukan penyimpanan data ke dalam file csv
+# Asumsi folder yang dicari berada di bawah level folder 'Tubes-Daspro-Kel11'
+    folder = input("Masukkan nama folder penyimpanan: ")
+    path = os.path.join(ROOT_DIR, folder)
+    if os.path.exists(path):
+        filedir = os.path.join(path, "user.csv")
+        writeCSV(var.user, filedir)
+        filedir = os.path.join(path, "game.csv")
+        writeCSV(var.game, filedir)
+        filedir = os.path.join(path, "riwayat.csv")
+        writeCSV(var.riwayat, filedir)
+        filedir = os.path.join(path, "kepemilikan.csv")
+        writeCSV(var.kepemilikan, filedir)
+    else:
+        os.mkdir(path)
+        filedir = os.path.join(path, "user.csv")
+        writeCSV(var.user, filedir)
+        filedir = os.path.join(path, "game.csv")
+        writeCSV(var.game, filedir)
+        filedir = os.path.join(path, "riwayat.csv")
+        writeCSV(var.riwayat, filedir)
+        filedir = os.path.join(path, "kepemilikan.csv")
+        writeCSV(var.kepemilikan, filedir)
+    print()
+    print("Data telah tersimpan pada folder " + folder)
     return
