@@ -14,7 +14,7 @@ def findKeystream (plaintext, key):
 def cipher(plaintext):
 # Fungsi mengembalikan pesan tersembunyi dengan algoritma keyed vigenere cipher
 # Diasumsikan string masukan tidak akan memiliki karakter selain yang terdapat pada variabel characters di subprogram ini
-    characters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-_=+;:/"
+    characters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-_=+:/"
     key = "Vigenere16521253"
     keystream = findKeystream(plaintext, key)
     shiftedC = ""
@@ -34,7 +34,7 @@ def cipher(plaintext):
 
 def decipher (ciphertext, key):
 # Fungsi melakukan deciphering pesan tersembunyi oleh algoritma keyed vigenere
-    characters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-_=+;:/"
+    characters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-_=+:/"
     keystream = findKeystream(ciphertext, key)
     shiftedR = ""
     plaintext = ""
