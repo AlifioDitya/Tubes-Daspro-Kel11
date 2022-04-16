@@ -1,4 +1,5 @@
 import functions as func
+from B01 import cipher
 
 def UserID (user):
 # Fungsi membuat / generate user ID secara otomatis dengan kode unik 
@@ -55,7 +56,7 @@ def register(userMtx):
     if valid:
         id = UserID(userMtx)
         # menyimpan data user dalam matrix
-        dataUsers = [id,username,name,password,"user","0"]
+        dataUsers = [id,username,name,cipher(password),"user","0"]
         userMtx += [dataUsers]
         print("Username " + username + " telah berhasil register ke dalam Binomo.")
     else:
