@@ -22,7 +22,11 @@ def cipher(plaintext):
     for i in range(func.length(plaintext)):
         for j in range(func.length(characters)):
             if characters[j] == plaintext[i]:
-                shiftedC = characters[j:func.length(characters)] + characters[0:j]
+                shiftedC = ""
+                for x in range(j, func.length(characters)):
+                    shiftedC += characters[x]
+                for y in range(j):
+                    shiftedC += characters[y]
                 break
         idx = 0
         for k in range(func.length(characters)):
@@ -41,7 +45,11 @@ def decipher (ciphertext, key):
     for i in range(func.length(keystream)):
         for j in range(func.length(characters)):
             if characters[j] == keystream[i]:
-                shiftedR = characters[j:func.length(characters)] + characters[0:j]
+                shiftedR = ""
+                for x in range(j, func.length(characters)):
+                    shiftedR += characters[x]
+                for y in range(j):
+                    shiftedR += characters[y]
                 break
         idx = 0
         for k in range(func.length(shiftedR)):
