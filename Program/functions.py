@@ -72,6 +72,15 @@ def isInData(dataMatrix, element, column):
             break
     return found
 
+def isInArr(e, arr):
+# Fungsi mengembalikan True apabila elemen ada di suatu array.
+    ada = False
+    for i in arr:
+        if i == e:
+            ada = True
+            break
+    return ada
+
 def retrieveIdx(dataMatrix, element, column):
 # Fungsi menghasilkan index matriks pertama kali elemen pada suatu kolom ditemukan
 # Prekondisi : elemen harus ada di matriks toko game
@@ -124,7 +133,7 @@ def drawTable(dataMtx):
 # I.S dataMtx terdefinisi, F.S tabel dataMtx tergambar
 # Prekondisi : Tabel harus memuat header
     drawBorder(dataMtx)
-    if length(dataMtx) <= 10:
+    if length(dataMtx) < 10:
         print("| No", end="")
     else:
         print("| No", end=" ")
@@ -175,3 +184,26 @@ def sortMtxCol(dataMtx, column, mode):
                 if int(sorted[i][column]) > int(sorted[j][column]):
                     sorted[i], sorted[j] = sorted[j], sorted[i]
     return sorted
+
+def hasGame(toko, kepemilikan, userID):
+# Fungsi mengembalikan kumpulan game ID yang dimiliki oleh suatu user
+    jumlahGameDimiliki = 0
+    for line in kepemilikan:
+        if line[1] == userID:
+            jumlahGameDimiliki += 1 
+    IDgameDimiliki = [" " for i in range(jumlahGameDimiliki)]
+    idxGameDimiliki = 0
+    for line in kepemilikan:
+        if line[1] == userID:
+            IDgameDimiliki[idxGameDimiliki] = line[0]
+            idxGameDimiliki += 1
+    gameDimiliki = [" " for i in range(jumlahGameDimiliki)]
+    idxGameDimiliki = 0
+    for game in toko:
+        if isInArr(game[0], IDgameDimiliki):
+            g = [" " for i in range (length(game)-1)]
+            for i in range(length(game)-1):
+                g[i] = game[i]
+            gameDimiliki[idxGameDimiliki] = g
+            idxGameDimiliki += 1
+    return gameDimiliki

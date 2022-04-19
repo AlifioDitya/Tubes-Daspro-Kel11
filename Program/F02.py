@@ -39,7 +39,7 @@ def register(userMtx):
     errMessage = ""
     # Looping kevalidan character username 
     for i in range(func.length(username)):
-        if not (username[i] in (validasiUsername) or (ord(username[i]) >= 97 and ord(username[i]) <= 122) or (ord(username[i]) >= 65 and ord(username[i]) <= 90)): 
+        if not (func.isInArr(username[i],validasiUsername) or (ord(username[i]) >= 97 and ord(username[i]) <= 122) or (ord(username[i]) >= 65 and ord(username[i]) <= 90)): 
             valid = False
             errMessage = "Username tidak valid."
             break
