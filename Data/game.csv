@@ -1,8 +1,10 @@
 id;nama;kategori;tahun_rilis;harga;stok
-GAME001;Ghost of Tsushima;Action, Adventure;2020;750000;5
-GAME002;Fifa 22;Sports;2021;900000;10
+GAME001;Ghost of Tsushima;Action, Adventure;2020;750000;4
+GAME002;Fifa 22;Sports;2021;900000;9
 GAME003;God of War Ragnarok;Action, Adventure;2022;880000;2
 GAME004;Marvel's Spiderman: Miles Morales;Action;2021;750000;4
 GAME005;Returnal;Action, Shooter;2022;880000;3
 GAME006;Demon's Souls;RPG;2022;1000000;2
-GAME007;Call of Duty: Black Ops Cold War;Action, FPS;2022;900000;7
+GAME007;Call of Duty: Black Ops Cold War;Action, FPS;2022;900000;6
+GAME008;Horizon: Forbidden West;Adventure;2022;900000;14
+GAME009;AC Valhalla;Viking, RPG;2020;700000;9

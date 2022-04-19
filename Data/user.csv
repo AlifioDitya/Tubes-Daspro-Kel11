@@ -1,5 +1,6 @@
 id;username;nama;password;role;saldo
-USER001;alifioditya;Fio;1RV!d%f!osR;admin;250000
+USER001;alifioditya;Fio;1RV!d%f!osR;admin;5250000
 USER002;victoriangelique;Angie;vWNNS!h%oqrRn;user;1250000
-USER003;yobeldc;Yobel;gXIJZ!h%oqroQ;user;100000
-USER004;ramarezky;Rama;:/JTFB^H@Orsq;user;150000
+USER003;yobeldc;Yobel;gXIJZ!h%oqroQ;user;2100000
+USER004;ramarezky;Rama;:/JTFB^H@Orsq;user;1150000
+USER005;guestacc;Guest;36LX%!f#;user;600000
