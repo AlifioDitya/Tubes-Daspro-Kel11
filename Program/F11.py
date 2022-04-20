@@ -34,7 +34,7 @@ def search_game_at_store(gameData):
 
     if func.length(memenuhi) == 1:
         print()
-        print("Tidak ada game pada inventory yang memenuhi kriteria")
+        print("Tidak ada game pada toko yang memenuhi kriteria.")
         return
     else:
         stopShow = False

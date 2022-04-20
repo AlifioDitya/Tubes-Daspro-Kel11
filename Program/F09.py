@@ -7,11 +7,10 @@ def list_game(toko, kepemilikan, userID):
     print()
     if func.length(punya_game) > 1:
         while not stopShow:
-            print("Daftar game: ")
+            print("Daftar game yang dimiliki: ")
             func.drawTable(punya_game)
             print()
-            print("Klik Enter untuk kembali ke main menu.")
-            input()
+            input("Klik Enter untuk kembali ke main menu.")
             stopShow = True        
     else:
         return print('Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.')

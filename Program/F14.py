@@ -60,6 +60,5 @@ def help(userType):
             print("9. logout - Logout dari akun yang digunakan.")
             print("10. exit - Stop program.")
         print()
-        print("Klik Enter untuk balik ke main menu.")
-        input()
+        input("Klik Enter untuk balik ke main menu.")
         stopShow = True

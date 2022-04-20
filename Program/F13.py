@@ -29,4 +29,5 @@ def history(mtxRiwayat, userid):
             func.drawTable(arrGame)
             print()
             input("Klik Enter untuk kembali ke main menu.")
+            stopShow = True
     return

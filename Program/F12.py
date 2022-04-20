@@ -5,9 +5,9 @@ def topup(dataMtx):
     print()
     username = input("Masukkan username: ")
     CekUsername = func.isInData(dataMtx,username,1)
-    while not CekUsername:
+    if not CekUsername:
+        print()
         print("Username “" + username + "” tidak ditemukan.")
-        username = input("Masukkan username: ")
     idx = func.retrieveIdx(dataMtx,username,1)
     tambah = int(input("Masukkan saldo: "))
     while (int(dataMtx[idx][5]) + tambah) < 0:

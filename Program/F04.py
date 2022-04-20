@@ -21,15 +21,10 @@ def addGame(dataMtx):
     year = input("Masukkan tahun rilis: ")
     price = input("Masukkan harga: ")
     stock = input("Masukkan stok awal: ")
-    while (func.isWhitespace(name) or func.isWhitespace(ctgry) or func.isWhitespace(year) or func.isWhitespace(price) or func.isWhitespace(stock)):
+    if (func.isWhitespace(name) or func.isWhitespace(ctgry) or func.isWhitespace(year) or func.isWhitespace(price) or func.isWhitespace(stock)):
         print()
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
-        print()
-        name = input("Masukkan nama game: ")
-        ctgry = input("Masukkan kategori: ")
-        year = input("Masukkan tahun rilis: ")
-        price = input("Masukkan harga: ")
-        stock = input("Masukkan stok awal: ")
+        return
     id = getGameID(dataMtx)
     dataMtx += [[id, name, ctgry, year, price, stock]]
     print()
