@@ -12,7 +12,7 @@ def login(userMtx):
     password = input("Masukkan password: ")
     print()
     # looping ketika log in gagal 
-    while not func.isInData(userMtx, username, 1) or (func.isInData(userMtx, username, 1) and password != password != decipher(userMtx[func.retrieveIdx(userMtx, username, 1)][3], "Vigenere16521253")):
+    while not func.isInData(userMtx, username, 1) or (func.isInData(userMtx, username, 1) and password != decipher(userMtx[func.retrieveIdx(userMtx, username, 1)][3], "Vigenere16521253")):
         print("Password atau username salah atau tidak ditemukan.")
         print()
         username = input("Masukkan username: ")
