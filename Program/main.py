@@ -77,7 +77,9 @@ if __name__ == "__main__":
                     var.running = keluar()
                     if var.running == False:
                         logged = False
-                else: print("Mohon memberi input sesuai pada menu di atas.")
+                else: 
+                    print()
+                    print("Mohon memberi input sesuai pada menu di atas.")
             elif userInfo[1] == "user":
                 print()
                 print("+======== MAIN MENU =========+")
@@ -130,4 +132,6 @@ if __name__ == "__main__":
                     var.running = keluar()
                     if var.running == False:
                         logged = False
-                else: print("Mohon memberi input sesuai pada menu di atas.")
+                else: 
+                    print()
+                    print("Mohon memberi input sesuai pada menu di atas.")
