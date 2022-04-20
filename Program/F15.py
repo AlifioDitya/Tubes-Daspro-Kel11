@@ -3,13 +3,29 @@ import argparse
 import os
 from config import ROOT_DIR
 import variables as var
+from time import sleep
 
 parser = argparse.ArgumentParser()
 parser.add_argument('folder', help='nama folder tempat penyimpanan data')
 args = parser.parse_args()
 
+def loading():
+    print("Loading", end="\r")
+    sleep(0.25)
+    print("Loading.",end="\r")
+    sleep(0.25)
+    print("Loading..",end="\r")
+    sleep(0.25)
+    print("Loading...",end="\r")
+    sleep(0.25)
+    print()
+
 def load():
+# Prosedur untuk meloading data dari folder tertentu
     path = os.path.join(ROOT_DIR, args.folder)
+    print()
+    loading()
+    print()
     if func.isWhitespace(args.folder):
         print("Tidak ada nama folder yang diberikan!")
         return
@@ -17,7 +33,6 @@ def load():
         print("Folder " + str(args.folder) + " tidak ditemukan.")
         return
     else:
-        print()
         print("Selamat datang di antarmuka Binomo! ヽ(o^ ^o)ﾉ")
         print("Mohon login terlebih dahulu untuk mengakses fitur penuh.")
         print()
