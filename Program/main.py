@@ -1,3 +1,4 @@
+from os import system
 import functions as func
 import variables as var
 from F02 import register
@@ -45,7 +46,9 @@ if __name__ == "__main__":
                 print("+======== MAIN MENU =========+")
                 func.drawTable([["Opsi"],["register"],["tambah_game"],["ubah_game"],["ubah_stok"],["list_game_toko"],["search_game_at_store"],["topup"],["help"],["save"],["logout"],["exit"]])
                 op = str(input("Input : "))
-                if op.lower() == "register" or op.lower() == "1":
+                if op.lower() == "clear" or op.lower() == "0":
+                    system('cls||clear')
+                elif op.lower() == "register" or op.lower() == "1":
                     register(var.user)
                 elif op.lower() == "tambah_game" or op.lower() == "2":
                     addGame(var.game)
@@ -67,6 +70,7 @@ if __name__ == "__main__":
                 elif op.lower() == "logout" or op.lower() == "10":
                     print()
                     func.loading("Logging out")
+                    print()
                     logged = False
                 elif op.lower() == "exit" or op.lower() == "11":
                     print()
@@ -79,7 +83,9 @@ if __name__ == "__main__":
                 print("+======== MAIN MENU =========+")
                 func.drawTable([["Opsi"],["list_game_toko"],["buy_game"],["list_game"],["search_my_game"],["search_game_at_store"],["riwayat"],["extras"],["help"],["save"],["logout"],["exit"]])
                 op = str(input("Input : "))
-                if op.lower() == "list_game_toko" or op.lower() == "1":
+                if op.lower() == "clear" or op.lower() == "0":
+                    system('cls||clear')
+                elif op.lower() == "list_game_toko" or op.lower() == "1":
                     drawSortedMtx(var.game)
                 elif op.lower() == "buy_game" or op.lower() == "2":
                     buy_game(var.game, var.kepemilikan, var.user, var.riwayat, userInfo[0])
@@ -117,6 +123,7 @@ if __name__ == "__main__":
                 elif op.lower() == "logout" or op.lower() == "10":
                     print()
                     func.loading("Logging out")
+                    print()
                     logged = False
                 elif op.lower() == "exit" or op.lower() == "11":
                     print()

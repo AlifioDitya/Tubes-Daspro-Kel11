@@ -17,7 +17,9 @@ def login(userMtx):
         print()
         username = input("Masukkan username: ")
         password = input("Masukkan password: ")
+        print()
     name = userMtx[func.retrieveIdx(userMtx, username, 1)][2]
+    func.loading("Logging in")
     print()
     print("Halo " + name + "! Selamat datang di Binomo.")
     userID = userMtx[func.retrieveIdx(userMtx, username, 1)][0]

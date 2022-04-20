@@ -51,5 +51,6 @@ def save():
         writeCSV(var.kepemilikan, filedir)
     print()
     func.loading("Saving")
+    print()
     print("Data telah tersimpan pada folder " + folder)
     return

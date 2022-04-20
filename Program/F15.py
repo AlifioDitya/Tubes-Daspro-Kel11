@@ -13,6 +13,7 @@ def load():
     path = os.path.join(ROOT_DIR, args.folder)
     print()
     func.loading("Loading")
+    print()
     if func.isWhitespace(args.folder):
         print("Tidak ada nama folder yang diberikan!")
         return

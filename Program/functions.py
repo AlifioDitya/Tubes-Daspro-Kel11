@@ -9,6 +9,7 @@ def loading(message):
     print(f"{message}..",end="\r")
     sleep(0.25)
     print(f"{message}...",end="\r")
+    print()
 
 def replaceChar(word ,old, new):
 # fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
