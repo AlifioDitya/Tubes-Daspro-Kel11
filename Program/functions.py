@@ -1,5 +1,15 @@
 # File ini memuat fungsi/prosedur pendukung program
 
+from time import sleep
+def loading(message):
+    print(f"{message}", end="\r")
+    sleep(0.25)
+    print(f"{message}.",end="\r")
+    sleep(0.25)
+    print(f"{message}..",end="\r")
+    sleep(0.25)
+    print(f"{message}...",end="\r")
+
 def replaceChar(word ,old, new):
 # fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
     temp = ""

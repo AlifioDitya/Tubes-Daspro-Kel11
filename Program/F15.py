@@ -3,29 +3,16 @@ import argparse
 import os
 from config import ROOT_DIR
 import variables as var
-from time import sleep
 
 parser = argparse.ArgumentParser()
 parser.add_argument('folder', help='nama folder tempat penyimpanan data')
 args = parser.parse_args()
 
-def loading():
-    print("Loading", end="\r")
-    sleep(0.25)
-    print("Loading.",end="\r")
-    sleep(0.25)
-    print("Loading..",end="\r")
-    sleep(0.25)
-    print("Loading...",end="\r")
-    sleep(0.25)
-    print()
-
 def load():
 # Prosedur untuk meloading data dari folder tertentu
     path = os.path.join(ROOT_DIR, args.folder)
     print()
-    loading()
-    print()
+    func.loading("Loading")
     if func.isWhitespace(args.folder):
         print("Tidak ada nama folder yang diberikan!")
         return

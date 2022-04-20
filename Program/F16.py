@@ -2,7 +2,6 @@ import os
 import functions as func
 import variables as var
 from config import ROOT_DIR
-from time import sleep
 
 def mtxToCSV(mtx):
 # Prosedur mengubah bentuk data dari matriks ke string terpisah oleh titik koma
@@ -20,17 +19,6 @@ def writeCSV(matrix, file):
     f.write(mtxToCSV(matrix))
     f.close()
     return
-
-def saving():
-    print("Saving", end="\r")
-    sleep(0.25)
-    print("Saving.",end="\r")
-    sleep(0.25)
-    print("Saving..",end="\r")
-    sleep(0.25)
-    print("Saving...",end="\r")
-    sleep(0.25)
-    print()
 
 def save():
 # Prosedur melakukan penyimpanan data ke dalam file csv
@@ -62,6 +50,6 @@ def save():
         filedir = os.path.join(path, "kepemilikan.csv")
         writeCSV(var.kepemilikan, filedir)
     print()
-    saving()
+    func.loading("Saving")
     print("Data telah tersimpan pada folder " + folder)
     return
