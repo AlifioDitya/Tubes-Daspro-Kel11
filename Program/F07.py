@@ -8,6 +8,7 @@ def drawSortedMtx(dataMtx):
     while not stopShow:
         sortBy = input("Skema sorting: ")
         while not func.isWhitespace(sortBy) and sortBy.lower() != "tahun-" and sortBy.lower() != "tahun+" and sortBy.lower() != "harga-" and sortBy.lower() != "harga+":
+            print()
             print("Skema sorting tidak valid!")
             print()
             sortBy = input("Skema sorting: ")
