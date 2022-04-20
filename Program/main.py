@@ -47,7 +47,7 @@ if __name__ == "__main__":
                 func.drawTable([["Opsi"],["register"],["tambah_game"],["ubah_game"],["ubah_stok"],["list_game_toko"],["search_game_at_store"],["topup"],["help"],["save"],["logout"],["exit"]])
                 op = str(input("Input : "))
                 if op.lower() == "clear" or op.lower() == "0":
-                    system('cls||clear')
+                    system('clear')
                 elif op.lower() == "register" or op.lower() == "1":
                     register(var.user)
                 elif op.lower() == "tambah_game" or op.lower() == "2":
@@ -86,7 +86,7 @@ if __name__ == "__main__":
                 func.drawTable([["Opsi"],["list_game_toko"],["buy_game"],["list_game"],["search_my_game"],["search_game_at_store"],["riwayat"],["extras"],["help"],["save"],["logout"],["exit"]])
                 op = str(input("Input : "))
                 if op.lower() == "clear" or op.lower() == "0":
-                    system('cls||clear')
+                    system('clear')
                 elif op.lower() == "list_game_toko" or op.lower() == "1":
                     drawSortedMtx(var.game)
                 elif op.lower() == "buy_game" or op.lower() == "2":
