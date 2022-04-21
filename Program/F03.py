@@ -1,4 +1,4 @@
-from B01 import decipher
+from b01 import decipher
 import functions as func
 
 def login(userMtx):
@@ -20,7 +20,8 @@ def login(userMtx):
         print()
     name = userMtx[func.retrieveIdx(userMtx, username, 1)][2]
     func.loading("Logging in")
-    print('''
+    try:
+        print('''
 
  █───█ █▀▀▀ █─── █▀▀▀ █▀▀█ █▀▄▀█ █▀▀▀ 
  █▄█▄█ █▀▀▀ █─── █─── █──█ █─▀─█ █▀▀▀ 
@@ -41,6 +42,8 @@ def login(userMtx):
     ⠀⠀⠀⠁⠉⠀⠀⠀⠁⠉⠁⠀⠀⠀⠉⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠁⠀⠀⠀
     '''
     )
+    except UnicodeEncodeError:
+        print()
     print("Halo " + name + "! Selamat datang di Binomo.")
     print()
     input("Klik enter untuk memasuki main menu." )
