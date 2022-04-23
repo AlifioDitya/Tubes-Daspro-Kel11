@@ -8,7 +8,7 @@ def findKeystream (plaintext, key):
 # Menerima masukan suatu plaintext dan keyword, kemudian menghasilkan perulangan keyword sampai sepanjang plaintext
 # Contoh: input : plaintext "helloworld" ; key "hola" ; output : "holaholaho"
 # KAMUS LOKAL
-#   keystream : string
+#   keystream, plaintext, key : string
 #   i : integer
 # ALGORITMA
     keystream = ""
@@ -28,7 +28,7 @@ def cipher(plaintext):
 # Lebih jelasnya dapat dilihat di link berikut: https://youtu.be/SkJcmCaHqS0
 # Credit to Udacity on YouTube.
 # KAMUS LOKAL
-#   characters, key, keystream, shiftedC, ciphertext : string
+#   characters, key, keystream, shiftedC, plaintext, ciphertext : string
 #   i, j, k, x, y, idx : integer
 # ALGORITMA
     characters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-_=+:/"
@@ -58,7 +58,7 @@ def decipher (ciphertext, key):
 # Fungsi melakukan deciphering pesan tersembunyi oleh algoritma keyed vigenere.
 # Merupakan hasil reverse-engineering dari subprogram cipher.
 # KAMUS LOKAL
-#   characters, keystream, shiftedR, plaintext : string
+#   characters, key, keystream, shiftedR, plaintext, ciphertext : string
 #   i, j, k, x, y, idx : integer
 # ALGORITMA
     characters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-_=+:/"
