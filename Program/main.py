@@ -20,6 +20,13 @@ from F17 import keluar
 from B02 import mcs
 from B03 import tictactoe
 
+# Program Binomo
+# Merupakan program simulasi toko game virtual.
+# KAMUS
+#   op, op2 : string
+#   logged, cond : boolean
+#   userInfo : tuple of strings
+# ALGORITMA
 if __name__ == "__main__":
     load()
     while var.running:
