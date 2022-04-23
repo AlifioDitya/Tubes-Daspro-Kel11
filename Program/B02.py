@@ -1,3 +1,6 @@
+# File Bonus Magic Conch Shell
+# Kontributor : Enrique Alifio Ditya/16521253
+
 from datetime import datetime as dt
 
 def lcg():
