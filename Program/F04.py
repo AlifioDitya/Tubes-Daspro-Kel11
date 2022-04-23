@@ -39,6 +39,12 @@ def addGame(dataMtx):
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")     # Pesan apabila informasi masukan tidak lengkap
         print()
         name = input("Masukkan nama game: ")
+        while func.isInData(dataMtx, name, 1):
+            print()
+            print("Game sudah ada di toko!")
+            print()
+            name = input("Masukkan nama game: ")
+        name = input("Masukkan nama game: ")
         ctgry = input("Masukkan kategori: ")
         year = input("Masukkan tahun rilis: ")
         price = input("Masukkan harga: ")
