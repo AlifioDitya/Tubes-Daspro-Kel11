@@ -4,17 +4,23 @@ def lcg():
 # Prosedur menghasilkan angka dalam range [0..6] secara pseudorandom 
 # dengan nilai 'seed' diambil dari milisecond waktu sekarang
 # Nilai a dan b pada algoritma lcg ini mengikuti yang digunakan oleh Microsoft Visual C++
+# I.S program berjalan, F.S dihasilkan angka dalam range [0..6]
 # KAMUS LOKAL
-#
+#   x, a, b : integer
+# ALGORITMA
     x = int(dt.now().strftime("%f"))
     a = 214013
     b = 2531011
     return ((a*x + b)%7)
 
 def mcs():
-# Prosedur magic conch shell memberikan jawaban secara pseudorandom
+# Prosedur magic conch shell memberikan jawaban secara pseudorandom dengan memanfaatkan prosedur lcg
+# I.S program utama berjalan, F.S fitur mcs dijalankan.
+# KAMUS LOKAL
+#   n : integer
+# ALGORITMA
     print()
-    a = input("Apa pertanyaanmu? ")
+    input("Apa pertanyaanmu? ")
     n = lcg()
     if n == 0:
         print("Iya.")
