@@ -6,7 +6,7 @@ import functions as func
 def findKeystream (plaintext, key):
 # Fungsi menghasilkan keystream untuk dipakai pada proses ciphering/deciphering pesan
 # Menerima masukan suatu plaintext dan keyword, kemudian menghasilkan perulangan keyword sampai sepanjang plaintext
-# Contoh: input : plaintext "helloworld" ; key "hola" ; output : "holaholaho"
+# Ex. input : { plaintext "helloworld", key "hola" } ; output : "holaholaho"
 # KAMUS LOKAL
 #   keystream, plaintext, key, temp : string
 #   i : integer
