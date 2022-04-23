@@ -1,3 +1,6 @@
+# Module Loading Data
+# Kontributor : Enrique Alifio Ditya/16521253
+
 import functions as func
 import argparse
 import os
@@ -9,7 +12,11 @@ parser.add_argument('folder', help='nama folder tempat penyimpanan data')
 args = parser.parse_args()
 
 def load():
-# Prosedur untuk meloading data dari folder tertentu
+# Prosedur untuk meloading data dari folder tertentu.
+# I.S data sudah ada, F.S data loaded ke dalam program.
+# KAMUS LOKAL
+#   path : string
+# ALGORITMA
     path = os.path.join(ROOT_DIR, args.folder)
     print()
     func.loading("Loading")
