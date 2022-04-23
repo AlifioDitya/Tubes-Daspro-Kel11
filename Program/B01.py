@@ -1,4 +1,4 @@
-# File Bonus Cipher
+# Module Bonus Cipher
 # Kontributor : Enrique Alifio Ditya/16521253
 
 import functions as func

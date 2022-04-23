@@ -1,4 +1,4 @@
-# File Bonus Tic Tac Toe
+# Module Bonus Tic Tac Toe
 # Kontributor : Enrique Alifio Ditya/16521253
 
 import functions as func
