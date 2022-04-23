@@ -27,7 +27,7 @@ def cipher(plaintext):
 # Array of characters ditabulasikan kemudian plaintext dan keystream masing-masing akan menentukan kolum serta baris pemetaan dalam tabel karakter tersebut.
 # Lebih jelasnya dapat dilihat di link berikut: https://youtu.be/SkJcmCaHqS0
 # Credit to Udacity on YouTube.
-# KAMUS
+# KAMUS LOKAL
 #   characters, key, keystream, shiftedC, ciphertext : string
 #   i, j, k, x, y, idx : integer
 # ALGORITMA
@@ -57,7 +57,7 @@ def cipher(plaintext):
 def decipher (ciphertext, key):
 # Fungsi melakukan deciphering pesan tersembunyi oleh algoritma keyed vigenere.
 # Merupakan hasil reverse-engineering dari subprogram cipher.
-# KAMUS
+# KAMUS LOKAL
 #   characters, keystream, shiftedR, plaintext : string
 #   i, j, k, x, y, idx : integer
 # ALGORITMA

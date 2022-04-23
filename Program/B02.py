@@ -2,8 +2,10 @@ from datetime import datetime as dt
 
 def lcg():
 # Prosedur menghasilkan angka dalam range [0..6] secara pseudorandom 
-# dengan nilai seed berupa milisecond waktu sekarang
+# dengan nilai 'seed' diambil dari milisecond waktu sekarang
 # Nilai a dan b pada algoritma lcg ini mengikuti yang digunakan oleh Microsoft Visual C++
+# KAMUS LOKAL
+#
     x = int(dt.now().strftime("%f"))
     a = 214013
     b = 2531011
