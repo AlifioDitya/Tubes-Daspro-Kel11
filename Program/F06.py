@@ -1,8 +1,16 @@
+# Module Mengubah Stok Game di Toko Game
+# Kontributor : Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def changeStock(dataMtx):
 # Prosedur mengubah stok game pada matriks toko game
-# I.S dataMtx terdefinisi, F.S elemen 'stok' pada salah satu baris dataMtx ditambahkan/dikurangi 
+# I.S dataMtx terdefinisi, F.S elemen 'stok' pada salah satu baris dataMtx ditambahkan/dikurangi
+# KAMUS LOKAL
+#   id, action : string
+#   idx, initial, addWith, final : integer
+#   dataMtx : matrix of strings
+# ALGORITMA
     print()
     id = func.inputID(dataMtx)
     print()
