@@ -1,8 +1,15 @@
+# Module Listing Game di Toko Berdasarkan ID, Tahun Rilis, dan Harga
+# Kontributor : Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def drawSortedMtx(dataMtx):
 # Prosedur menggambar matriks data yang sudah terurut
 # I.S dataMtx terdefinisi, F.S dataMtx terurut dan tergambar
+# KAMUS LOKAL
+#   stopShow : boolean
+#   sortBy : string
+# ALGORITMA
     print()
     stopShow = False
     while not stopShow:
