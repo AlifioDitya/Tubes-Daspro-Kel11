@@ -38,6 +38,11 @@ def addGame(dataMtx):
         print()
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")     # Pesan apabila informasi masukan tidak lengkap
         print()
+        name = input("Masukkan nama game: ")
+        ctgry = input("Masukkan kategori: ")
+        year = input("Masukkan tahun rilis: ")
+        price = input("Masukkan harga: ")
+        stock = input("Masukkan stok awal: ")
     id = getGameID(dataMtx)
     dataMtx += [[id, name, ctgry, year, price, stock]]
     print()
