@@ -4,10 +4,9 @@
 from datetime import datetime as dt
 
 def lcg():
-# Prosedur menghasilkan angka dalam range [0..6] secara pseudorandom 
+# Fungsi menghasilkan angka dalam range [0..6] secara pseudorandom 
 # dengan nilai 'seed' diambil dari milisecond waktu sekarang
 # Nilai a dan b pada algoritma lcg ini mengikuti yang digunakan oleh Microsoft Visual C++
-# I.S program berjalan, F.S dihasilkan angka dalam range [0..6]
 # KAMUS LOKAL
 #   x, a, b : integer
 # ALGORITMA
