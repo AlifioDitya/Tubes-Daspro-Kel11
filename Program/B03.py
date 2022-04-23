@@ -26,7 +26,7 @@ def win(board, player):
 #   won : integer
 #   board : matrix of character
 #   player : character
-# ALGORTIMA
+# ALGORITMA
     # Cek kemenangan secara horizontal
     for i in range(3):
         won = True
