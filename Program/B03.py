@@ -44,17 +44,17 @@ def win(board, player):
                 won = False
                 break
         if won : return (won,"vertikal.")
-    won = True
-
+    
     # Cek kemenangan secara diagonal kiri-atas ke kanan-bawah
+    won = True
     for i in range(3):
         if board[i][i] != player:
             won = False
             break
     if won : return (won,"diagonal.")
-    won = True
 
     # Cek kemenangan secara diagonal kanan-atas ke kiri-bawah
+    won = True
     for i in range(3):
         if board[i][2-i] != player:
             won = False
