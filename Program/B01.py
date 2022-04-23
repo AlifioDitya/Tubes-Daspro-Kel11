@@ -8,7 +8,7 @@ def findKeystream (plaintext, key):
 # Menerima masukan suatu plaintext dan keyword, kemudian menghasilkan perulangan keyword sampai sepanjang plaintext
 # Contoh: input : plaintext "helloworld" ; key "hola" ; output : "holaholaho"
 # KAMUS LOKAL
-#   keystream, plaintext, key : string
+#   keystream, plaintext, key, temp : string
 #   i : integer
 # ALGORITMA
     keystream = ""
@@ -17,7 +17,10 @@ def findKeystream (plaintext, key):
             keystream += key[i]
     else:
         keystream += key
-        keystream += findKeystream (plaintext[func.length(keystream):], key)   # rekursi apabila plaintext lebih panjang daripada key
+        temp = ""
+        for i in range(func.length(keystream), func.length(plaintext)):
+            temp += plaintext[i]
+        keystream += findKeystream (temp, key)   # rekursi apabila plaintext lebih panjang daripada key
     return keystream
 
 def cipher(plaintext):
@@ -38,7 +41,7 @@ def cipher(plaintext):
     ciphertext = ""
     for i in range(func.length(plaintext)):
         for j in range(func.length(characters)):
-            # Menenutkan baris character untuk pemetaan
+            # Menentukan baris character untuk pemetaan
             if characters[j] == plaintext[i]:
                 shiftedC = ""
                 for x in range(j, func.length(characters)):
