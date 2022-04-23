@@ -1,7 +1,13 @@
-# File ini memuat fungsi/prosedur pendukung program
+# Module Fungsi dan Prosedur Pendukung Program
+# Kontributor : Enrique Alifio Ditya/16521253
 
 from time import sleep
+
 def loading(message):
+# Fungsi menghasilkan animated loading message.
+# KAMUS LOKAL
+#   message : string
+# ALGORITMA
     print(f"{message}", end="\r")
     sleep(0.25)
     print(f"{message}.",end="\r")
@@ -12,7 +18,11 @@ def loading(message):
     print()
 
 def replaceChar(word ,old, new):
-# fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
+# Fungsi mengganti suatu character (old) menjadi character baru (new) pada suatu string (word).
+# KAMUS LOKAL
+#   word, temp : string
+#   old, new, character : character
+# ALGORITMA
     temp = ""
     for character in word:
         if character != old:
@@ -22,7 +32,12 @@ def replaceChar(word ,old, new):
     return temp     
 
 def length(arr):
-# fungsi menghasilkan jumlah elemen pada arr, berfungsi seperti len() pada python 3
+# Fungsi menghasilkan jumlah elemen pada arr, berfungsi seperti len() pada python 3.
+# KAMUS LOKAL
+#   total : integer
+#   i : type element of array
+#   arr : array
+# ALGORITMA
     total = 0
     for i in arr:
         total += 1
@@ -30,7 +45,13 @@ def length(arr):
 
 def manualSplit(word, delimiter):
 # Fungsi mengubah string menjadi elemen array yang dipisahkan oleh suatu character, berfungsi seperti fungsi split() di python 3.
-    sumElement = 1
+# KAMUS LOKAL
+# sumElement, idx, j : integer
+# i, delimiter : character
+# temp, word : string
+# li : array of character
+# ALGORITMA 
+    sumElement = 1   # Counter element array setelah string terpisah
     for i in word:
         if i == delimiter:
             sumElement += 1
@@ -38,7 +59,7 @@ def manualSplit(word, delimiter):
     temp = ""
     idx = 0
     j = 0
-    for character in word:
+    for character in word:          # Proses pengisian array dari string yang terpisah karakter
         if character != delimiter:
             temp += character
             if j == length(word)-1:
@@ -52,7 +73,12 @@ def manualSplit(word, delimiter):
 
 def isWhitespace(word):
 # Fungsi mengembalikan True apabila suatu string kosong atau spasi.
-# Sering digunakan ketika mengecek apabila input string kosong
+# Sering digunakan ketika mengecek apabila input string kosong.
+# KAMUS LOKAL
+#   empty : boolean
+#   word : string
+#   i : character
+# ALGORITMA
     empty = True
     if length(word) == 0:
         return empty
@@ -62,7 +88,14 @@ def isWhitespace(word):
     return empty
 
 def convertData(file):
-# Fungsi ini mengonversi data pada file csv menjadi matrix
+# Fungsi ini mengonversi data pada file csv menjadi matrix.
+# KAMUS LOKAL
+    # f : SEQFILE
+    # file, raw : string
+    # arr : array of strings
+    # matrix : matrix of strings
+    # i : integer
+# ALGORITMA
     f = open(file, "r")
     raw = f.readlines()
     f.close()
@@ -75,7 +108,13 @@ def convertData(file):
     return matrix  
 
 def isInData(dataMatrix, element, column):
-# Fungsi menghasilkan true apabila element terdapat di dalam kolom matriks tertentu
+# Fungsi menghasilkan True apabila element terdapat di dalam kolom matriks tertentu.
+# KAMUS LOKAL
+#   found : boolean
+#   line : array of strings
+#   dataMatrix : matrix of strings
+#   column : integer
+# ALGORITMA
     found = False
     for line in dataMatrix:
         if line[column] == element:
@@ -84,7 +123,11 @@ def isInData(dataMatrix, element, column):
     return found
 
 def isInArr(e, arr):
-# Fungsi mengembalikan True apabila elemen ada di suatu array.
+# Fungsi mengembalikan True apabila elemen ada di dalam array.
+# KAMUS LOKAL
+#   ada : boolean
+#   i : type element of array
+# ALGORITMA
     ada = False
     for i in arr:
         if i == e:
@@ -93,8 +136,13 @@ def isInArr(e, arr):
     return ada
 
 def retrieveIdx(dataMatrix, element, column):
-# Fungsi menghasilkan index matriks pertama kali elemen pada suatu kolom ditemukan
-# Prekondisi : elemen harus ada di matriks toko game
+# Fungsi menghasilkan index matriks pertama kali elemen pada suatu kolom ditemukan.
+# Prekondisi : elemen harus ada di dalam matriks.
+# KAMUS LOKAL
+#   dataMatrix : matrix of strings
+#   element : string
+#   i, column : integer
+# ALGORITMA
     i = 0
     while element != dataMatrix[i][column] and i < (length(dataMatrix)-1):
         i += 1
@@ -102,6 +150,11 @@ def retrieveIdx(dataMatrix, element, column):
 
 def inputID(dataMtx):
 # Prosedur melakukan validasi terhadap masukan ID.
+# I.S dataMtx terdefinisi, F.S ID game terinput valid.
+# KAMUS LOKAL
+#   id : string
+#   dataMtx : matrix of strings
+# ALGORITMA
     id = input("Masukkan ID game: ").upper()
     while not isInData(dataMtx, id, 0) or isWhitespace(id):
         if isWhitespace(id):
@@ -115,8 +168,12 @@ def inputID(dataMtx):
     return id
 
 def findLongestOnColumn(dataMtx, column):
-# Fungsi mencari jumlah karakter string terpanjang dalam suatu kolom di matriks
-# Digunakan dalam proses menggambar tabel
+# Fungsi menghasilkan panjang karakter string terpanjang dalam suatu kolom di matriks.
+# Digunakan dalam proses menggambar tabel.
+# KAMUS LOKAL
+#   maxLen, i : integer
+#   dataMtx : matrix of strings
+# ALGORITMA
     maxLen = 0
     for i in range(length(dataMtx)):
         if length(dataMtx[i][column]) > maxLen:
@@ -124,8 +181,12 @@ def findLongestOnColumn(dataMtx, column):
     return maxLen
 
 def drawBorder(dataMtx):
-# Prosedur menggambar border tabel matriks data
-# I.S dataMtx terdefinisi, F.S tergambar border tabel dataMtx
+# Prosedur menggambar border tabel matriks data.
+# I.S dataMtx terdefinisi, F.S tergambar border tabel dataMtx.
+# KAMUS LOKAL
+#   sumLine, column, x : integer
+#   dataMtx : matrix of strings
+# ALGORITMA
     sumLine = 0
     column = length(dataMtx[0])
     for x in range(column):
@@ -140,9 +201,14 @@ def drawBorder(dataMtx):
     print("+")
 
 def drawTable(dataMtx):
-# Prosedur menggambar matriks data dalam bentuk tabel
-# I.S dataMtx terdefinisi, F.S tabel dataMtx tergambar
-# Prekondisi : Tabel harus memuat header
+# Prosedur menggambar matriks data dalam bentuk tabel.
+# I.S dataMtx terdefinisi, F.S tabel dataMtx tergambar.
+# Prekondisi : Tabel harus memuat header.
+# KAMUS LOKAL
+#   i, maxLenColumn : integer
+#   element : string
+#   dataMtx : matrix of strings
+# ALGORITMA
     drawBorder(dataMtx)
     if length(dataMtx) < 10:
         print("| No", end="")
@@ -183,8 +249,14 @@ def drawTable(dataMtx):
     drawBorder(dataMtx)
 
 def sortMtxCol(dataMtx, column, mode):
-# Fungsi menghasilkan matriks yang terurut kolomnya sesuai mode
-# Mode 0 untuk ascending, mode selain 0 untuk descending
+# Fungsi menghasilkan matriks yang terurut kolomnya sesuai mode.
+# Mode 0 untuk ascending, mode selain 0 untuk descending.
+# KAMUS LOKAL
+#   sorted, dataMtx : matrix of strings
+#   item : string
+#   line : array of strings
+#   mode, i, j : integer
+# ALGORITMA
     sorted = [[item for item in line] for line in dataMtx]
     for i in range(1, length(sorted)):
         for j in range(1, length(sorted)):
@@ -198,6 +270,12 @@ def sortMtxCol(dataMtx, column, mode):
 
 def hasGame(toko, kepemilikan, userID):
 # Fungsi mengembalikan kumpulan game ID yang dimiliki oleh suatu user
+# KAMUS LOKAL
+#   jumlahGameDimiliki, idxGameDimiliki : integer
+#   toko, kepemilikan : matrix of strings
+#   line, IDGameDimiliki, g, game : array of strings
+#   userID : string
+# ALGORITMA
     jumlahGameDimiliki = 0
     for line in kepemilikan:
         if line[1] == userID:
