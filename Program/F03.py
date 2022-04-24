@@ -1,8 +1,23 @@
+# Nama Fungsi : Fungsi Login (F03)
+# Fungsi untuk login pengguna saat awal program dimulai, mengembalikan informasi dari pengguna yang login.
+# Kontributor : Victoria Angelique / 16521460, Enrique Alifio Ditya / 16521253
+
 from B01 import decipher
 import functions as func
 
 def login(userMtx):
 # Fungsi untuk login pengguna saat awal program dimulai, mengembalikan informasi dari pengguna yang login.
+
+# Asumsikan data user sudah tersedia, berikut data username beserta dengan passwordnya.
+
+#   username, password :
+#   alifioditya, fio16521253
+#   victoriangelique, angie16521460
+#   yobeldc, yobel16521415
+#   ramarezky, rama16521352
+#   guest, guest123
+#   guestadmin, guest123
+
 # KAMUS LOKAL
 #   username, password : string
 #   name, userID, userRole : string

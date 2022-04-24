@@ -1,8 +1,19 @@
+# Nama Fungsi: Fungsi Exit (F17)
+# Deskripsi : Fungsi melakukan terminasi looping main program dengan mengembalikan False jika user ingin keluar sistem. 
+# Fungsi exit ini juga akan memanggil prosedur save apabila user ingin menyimpan perubahan terlebih dahulu
+# Kontributor : Victoria Angelique / 16521460, Enrique Alifio Ditya / 16521253
+
 from F16 import save
 
 def keluar():
 # Fungsi melakukan terminasi looping main program dengan mengembalikan False jika user ingin keluar sistem.
 # Prosedur save dilakukan apabila user ingin menyimpan perubahan terlebih dahulu.
+# I.S Program masih berjalan 
+# F.S Program berhenti 
+# KAMUS LOKAL 
+#   running : boolean 
+#   keluar : string
+# ALGORITMA
     running = True
     keluar = input("Apakah anda ingin menyimpan file yang sudah diubah dalam program Binomo? (y/t): ") 
     # validasi jawaban Ya atau Tidak

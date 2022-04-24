@@ -1,3 +1,8 @@
+# Nama Fungsi : Fungsi Register (F02)
+# Deskripsi: Fungsi Register mendaftarkan pengguna baru dengan masukkan nama, username dan password 
+# dan akan tersimpan dalam variabel sementara 
+# Kontributor : Victoria Angelique / 16521460 , Enrique Alifio Ditya / 16521253
+
 import functions as func
 from B01 import cipher
 

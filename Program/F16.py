@@ -1,3 +1,7 @@
+# Nama Fungsi : Fungsi Save (F16)
+# Fungsi save akan menyimpan perubahan data ke dalam csv sesuai dengan permintaan pengguna 
+# Kontributor : Victoria Angelique / 16521460, Enrique Alifio Ditya / 16521253
+
 import os
 import functions as func
 import variables as var
@@ -5,6 +9,11 @@ from config import ROOT_DIR
 
 def mtxToCSV(mtx):
 # Prosedur mengubah bentuk data dari matriks ke string terpisah oleh titik koma
+# KAMUS LOKAL
+#   temp : string
+#   line : array of string
+#   mtx : matrix of string
+# ALGORITMA
     temp = ""
     for line in mtx:
         for element in line:
@@ -15,6 +24,11 @@ def mtxToCSV(mtx):
 
 def writeCSV(matrix, file):
 # Prosedur melakukan penulisan data berbentuk matriks ke dalam file csv
+# KAMUS LOKAL
+#   f : SEQFILE
+#   matrix : matrix
+#   file : string
+# ALGORITMA
     f = open(file, "w")
     f.write(mtxToCSV(matrix))
     f.close()
@@ -22,6 +36,10 @@ def writeCSV(matrix, file):
 
 def save():
 # Prosedur melakukan penyimpanan data ke dalam file csv
+# I.S perubahan data belum tersimpan 
+# F.S perubahan data tersimpan dalam csv
+# KAMUS LOKAL
+#   folder : string
 # Asumsi folder yang dicari berada di bawah level folder 'Tubes-Daspro-Kel11'
     folder = input("Masukkan nama folder penyimpanan: ")
     while func.isWhitespace(folder):
