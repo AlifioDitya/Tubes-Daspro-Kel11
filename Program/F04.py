@@ -44,7 +44,6 @@ def addGame(dataMtx):
             print("Game sudah ada di toko!")
             print()
             name = input("Masukkan nama game: ")
-        name = input("Masukkan nama game: ")
         ctgry = input("Masukkan kategori: ")
         year = input("Masukkan tahun rilis: ")
         price = input("Masukkan harga: ")
