@@ -20,6 +20,7 @@ def changeStock(dataMtx):
     while func.isWhitespace(str(addWith)):
         print()
         print("Input tidak boleh kosong.")
+        print()
         addWith = int(input("Masukkan jumlah: "))
         print()
     action = ""
