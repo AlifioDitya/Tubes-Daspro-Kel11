@@ -14,9 +14,9 @@ def topup(dataMtx):
     print()
     username = input("Masukkan username: ")
     CekUsername = func.isInData(dataMtx,username,1)
-    if not CekUsername and func.isWhitespace(username):
+    if not CekUsername or func.isWhitespace(username):
         print()
-        print("Username “" + username + "” tidak ditemukan.")
+        print("Username “" + username + "” tidak ditemukan atau tidak valid.")
         return
     idx = func.retrieveIdx(dataMtx,username,1)
     tambah = int(input("Masukkan saldo: "))
