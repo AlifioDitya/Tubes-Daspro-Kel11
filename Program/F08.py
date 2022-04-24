@@ -1,3 +1,6 @@
+# Module Beli Game
+# Kontributor : Yobel Dean Christopher/16521415, Enrique Alifio Ditya/16521253
+
 import functions as func
 from datetime import datetime as dt
 

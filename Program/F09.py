@@ -1,7 +1,14 @@
+# Module Daftar Game yang Dimiliki
+# Kontributor : Yobel Dean Christopher/16521415, Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def list_game(toko, kepemilikan, userID):
 # Prosedur untuk menampilkan game yang dimiliki user yang sedang mengoperasikan sistem
+# KAMUS LOKAL
+#   punya_game : matrix of strings
+#   stopShow : boolean
+# ALGORITMA
     punya_game = [["id","nama","kategori","tahun_rilis","harga"]] + func.hasGame(toko, kepemilikan, userID)
     stopShow = False
     print()

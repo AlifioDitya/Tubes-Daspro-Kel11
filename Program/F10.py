@@ -1,3 +1,6 @@
+# Module Search Game yang Dimiliki
+# Kontributor : Yobel Dean Christopher/16521415, Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def search_my_game(toko, kepemilikan, userID):

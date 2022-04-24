@@ -1,3 +1,6 @@
+# Module Search Game pada Toko
+# Kontributor : Yobel Dean Christopher/16521415, Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def search_game_at_store(gameData):
