@@ -14,7 +14,7 @@ def topup(dataMtx):
     print()
     username = input("Masukkan username: ")
     CekUsername = func.isInData(dataMtx,username,1)
-    if not CekUsername:
+    if not CekUsername and func.isWhitespace(username):
         print()
         print("Username “" + username + "” tidak ditemukan.")
         return
