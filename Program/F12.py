@@ -1,7 +1,16 @@
+# Module Topup
+# Kontributor : Rama Maulana Rezky/16521325, Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def topup(dataMtx):
 # Prosedur melakukan topup saldo untuk user tertentu
+# KAMUS LOKAL
+#   username, name : string
+#   CekUsername : boolean
+#   idx, tambah : integer
+#   dataMtx : matrix of string
+# ALGORITMA
     print()
     username = input("Masukkan username: ")
     CekUsername = func.isInData(dataMtx,username,1)

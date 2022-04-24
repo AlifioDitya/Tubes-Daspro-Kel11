@@ -1,6 +1,12 @@
+# Module Topup
+# Kontributor : Rama Maulana Rezky/16521325, Enrique Alifio Ditya/16521253
+
 def help(userType):
 # Prosedur untuk menampilkan panduan penggunaan sistem
 # I.S program berjalan, F.S tampak panduan pengoperasian sistem
+# KAMUS LOKAL
+#   stopShow : boolean
+# ALGORITMA
     print()
     stopShow = False
     while not stopShow:

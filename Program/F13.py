@@ -1,7 +1,16 @@
+# Module Topup
+# Kontributor : Rama Maulana Rezky/16521325, Enrique Alifio Ditya/16521253
+
 import functions as func
 
 def history(mtxRiwayat, userid):
 # Prosedur memberikan riwayat pembelian game yang dimiliki pengguna
+# KAMUS LOKAL
+#   count, i, j, searchedIdx : integer
+#   arrgame, game : array of string
+#   mtxRiwayat : matrix of string
+#   stopShow : boolean
+# ALGORITMA
     count = 0
     for i in range(func.length(mtxRiwayat)):
         if mtxRiwayat[i][0] == userid:
