@@ -17,6 +17,10 @@ def changeStock(dataMtx):
     idx = func.retrieveIdx(dataMtx, id, 0)
     initial = int(dataMtx[idx][5])
     addWith = int(input("Masukkan jumlah: "))
+    if addWith == 0:
+        print()
+        print("Stok game", dataMtx[idx][1], "tetap. Stok sekarang:", dataMtx[idx][5])
+        return
     while func.isWhitespace(str(addWith)):
         print()
         print("Input tidak boleh kosong.")
