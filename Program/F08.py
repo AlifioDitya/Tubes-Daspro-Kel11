@@ -3,6 +3,15 @@ from datetime import datetime as dt
 
 def buy_game(toko, kepemilikan, userMtx, riwayat, userID): 
 # Prosedur untuk membeli game pada toko
+# I.S. toko, kepemilikan, userMtx, riwayat, dan userID terdefinisi
+# F.S. Stok game ditambahkan pada data kepemilikan
+
+# KAMUS LOKAL
+#   userID, gameID : string
+#   idxUser, idxGame, saldo_punya, saldo_perlu, stokGame : integer
+#   toko, kepemilikan, userMtx, riwayat, gameDimiliki : matrix of strings
+
+# ALGORITMA
     print()
     gameID = func.inputID(toko)
 

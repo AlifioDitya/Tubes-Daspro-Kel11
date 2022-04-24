@@ -2,6 +2,17 @@ import functions as func
 
 def search_my_game(toko, kepemilikan, userID):
 # Prosedur untuk mencari game yang dimiliki berdasarkan ID/tahun rilis
+# I.S. toko, kepemilikan, dan userID terdefinisi
+# F.S. game yang dicari pada data kepemilikan ditampilkan
+
+# KAMUS LOKAL
+# userID, gameID : string
+# total, j : integer
+# toko, kepemilikan, punya_game, sesuai_kriteria : matrix of strings
+# stopShow : boolean
+# flag : matrix of booleans
+
+# ALGORITMA
     print()
     punya_game = func.hasGame(toko, kepemilikan, userID)
 

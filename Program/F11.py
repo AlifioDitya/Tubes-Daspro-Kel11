@@ -3,6 +3,17 @@ import functions as func
 def search_game_at_store(gameData):
 # Prosedur mencari game pada toko game berdasarkan filter tertentu
 # Asumsi input filter persis sama dengan yang tercatat pada data
+# I.S. gameData terdefinisi
+# F.S. game yang dicari pada data game ditampilkan
+
+# KAMUS LOKAL
+# gameID, name, price, ctgry, year : string
+# total, j : integer
+# searchBy : matrix of strings
+# stopShow : boolean
+# flag : matrix of booleans
+
+# ALGORITMA
     print()
     gameID = input("Masukkan ID Game: ")
     name = input("Masukkan Nama Game: ")
