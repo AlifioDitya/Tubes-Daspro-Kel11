@@ -17,7 +17,7 @@ def changeStock(dataMtx):
     idx = func.retrieveIdx(dataMtx, id, 0)
     initial = int(dataMtx[idx][5])
     addWith = int(input("Masukkan jumlah: "))
-    while func.isWhitespace(addWith):
+    while func.isWhitespace(str(addWith)):
         print()
         print("Input tidak boleh kosong.")
         addWith = int(input("Masukkan jumlah: "))
