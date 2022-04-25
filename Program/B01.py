@@ -1,5 +1,5 @@
 # Module Bonus Cipher
-# Kontributor : Enrique Alifio Ditya/16521253
+# Kontributor : Enrique Alifio Ditya / 16521253, Nayyara Airlangga / 2106652070
 
 import functions as func
 
